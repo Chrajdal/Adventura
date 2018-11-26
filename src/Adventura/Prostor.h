@@ -19,7 +19,6 @@ public:
 
 	}
 
-	void pridej_vychod(const Prostor & p);
 	void pridej_vec(const Vec & v);
 	void pridej_osoby(const Osoba & o);
 
@@ -27,7 +26,6 @@ public:
 	{
 		return popis;
 	}
-
 private:
 	std::string nazev;
 	std::string popis;
