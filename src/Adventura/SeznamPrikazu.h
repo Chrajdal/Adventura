@@ -33,11 +33,14 @@ public:
 
 	void pridej_prikaz(IPrikaz * p)
 	{
-		std::cout << "pridavam prikaz: " << std::endl;
-		std::cout << p->nazev() << std::endl;
+		//std::cout << "----------------------------DEBUG--------------------\n";
+		//std::cout << "pridavam prikaz: " << std::endl;
+		//std::cout << p->nazev() << std::endl;
+		//std::cout << "----------------------------DEBUG--------------------\n";
+		
+		
 		if (je_platny(p->nazev()) == true)
 		{
-			std::cout << "pridavam prikaz: neni platny" << std::endl;
 			return;
 		}
 

@@ -21,14 +21,18 @@ void Hra::uvitej(void) const
 {
 	std::cout <<
 		std::string("+-----------------------------------------------------------------------------+\n") +
+		std::string("|                                                                             |\n") +
 		std::string("|                                 Vitejte!                                    |\n") +
+		std::string("|                                                                             |\n") +
 		std::string("| Toto je nova adventura, ve ktere bude vasim cilem pripravit co nejlepsi     |\n") +
 		std::string("| party pro kamarada. Ovsem nebudete mit prilis mnoho casu. Vice info o       |\n") +
 		std::string("| pribehu si muzete precist v manualu.                                        |\n") +
+		std::string("|                                                                             |\n") +
 		std::string("| Napiste 'napoveda', pokud si nevite rady, jak hrat dal nebo potrebujete     |\n") +
 		std::string("| pripomenout prikazy. Hru spustite prikazem 'hraj'                           |\n") +
 		std::string("| a ukoncite prikazem 'konec'.                                                |\n") +
-		std::string("| Hodne stesti!                                                               |\n") +
+		std::string("|                                                                             |\n") +
+		std::string("|                               Hodne stesti!                                 |\n") +
 		std::string("+-----------------------------------------------------------------------------+\n");
 }
 
