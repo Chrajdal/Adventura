@@ -2,6 +2,15 @@
 
 Hra::Hra()
 {
+	PrikazKonec * k = new PrikazKonec("konec", this);
+	platne_prikazy.pridej_prikaz(k);
+
+	std::cout << "Platne prikazy - Hra::Hra(): " << std::endl;
+	auto plat_prik = platne_prikazy.nazvy_prikazu();
+	for (auto & i : plat_prik)
+		std::cout << i << " ";
+	std::cout << std::endl;
+
 
 }
 
@@ -29,6 +38,13 @@ void Hra::rozluc(void) const
 
 void Hra::zpracuj(const std::string & prikaz)
 {
+	std::cout << "Platne prikazy: " << std::endl;
+	auto plat_prik = platne_prikazy.nazvy_prikazu();
+	for (auto & i : plat_prik)
+		std::cout << i << " ";
+	std::cout << std::endl;
+
+
 	if (prikaz.empty())
 	{
 		std::cout << "Nevim co tim myslis, prazdny prikaz nelze provest. O.o \n";

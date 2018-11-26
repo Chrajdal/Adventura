@@ -7,6 +7,8 @@
 #include <iterator>
 #include <vector>
 
+class PrikazKonec;
+
 #include "SeznamPrikazu.h"
 #include "Batoh.h"
 #include "HerniPlan.h"

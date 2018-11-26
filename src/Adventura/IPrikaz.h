@@ -6,7 +6,7 @@
 class IPrikaz
 {
 public:
-	IPrikaz();
+	IPrikaz(const std::string & jmeno);
 	virtual ~IPrikaz();
 
 	virtual void proved(const std::vector<std::string> & parametry = {}) = 0;

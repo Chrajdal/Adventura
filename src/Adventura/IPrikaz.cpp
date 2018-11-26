@@ -2,7 +2,8 @@
 
 
 
-IPrikaz::IPrikaz()
+IPrikaz::IPrikaz(const std::string & jmeno)
+	: jmeno_prikazu(jmeno)
 {
 }
 
