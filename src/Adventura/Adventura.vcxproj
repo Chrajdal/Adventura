@@ -131,9 +131,11 @@
     <ClInclude Include="Batoh.h" />
     <ClInclude Include="HerniPlan.h" />
     <ClInclude Include="Hra.h" />
+    <ClInclude Include="HraFWD.h" />
     <ClInclude Include="IPrikaz.h" />
     <ClInclude Include="Osoba.h" />
     <ClInclude Include="PrikazKonec.h" />
+    <ClInclude Include="PrikazKonecFWD.h" />
     <ClInclude Include="Prostor.h" />
     <ClInclude Include="SeznamPrikazu.h" />
     <ClInclude Include="TextoveRozhrani.h" />

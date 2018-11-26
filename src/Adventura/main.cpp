@@ -2,6 +2,9 @@
 
 #include "TextoveRozhrani.h"
 
+class Hra;
+class PrikazKonec;
+
 int main(void)
 {
 
@@ -9,5 +12,6 @@ int main(void)
 	tr.hraj();
 
 
+	system("PAUSE");
 	return 0;
 }

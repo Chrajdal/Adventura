@@ -2,6 +2,7 @@
 
 Hra::Hra()
 {
+	je_konec = false;
 	PrikazKonec * k = new PrikazKonec("konec", this);
 	platne_prikazy.pridej_prikaz(k);
 
@@ -16,7 +17,6 @@ Hra::Hra()
 
 Hra::~Hra()
 {
-
 }
 
 void Hra::uvitej(void) const
@@ -38,12 +38,13 @@ void Hra::rozluc(void) const
 
 void Hra::zpracuj(const std::string & prikaz)
 {
+	std::cout << "----------------------------DEBUG--------------------\n";
 	std::cout << "Platne prikazy: " << std::endl;
 	auto plat_prik = platne_prikazy.nazvy_prikazu();
 	for (auto & i : plat_prik)
 		std::cout << i << " ";
 	std::cout << std::endl;
-
+	std::cout << "----------------------------DEBUG--------------------\n";
 
 	if (prikaz.empty())
 	{
@@ -64,7 +65,6 @@ void Hra::zpracuj(const std::string & prikaz)
 		slova.erase(slova.begin());
 		p->proved(slova);
 	}
-
 	else
 	{
 		std::cout << "Nevim co tim myslis, tento prikaz neznam.\n";

@@ -22,4 +22,6 @@ void TextoveRozhrani::hraj(void)
 
 		hra.zpracuj(prikaz);
 	}
+	if (hra.konec_hry() == true)
+		hra.rozluc();
 }

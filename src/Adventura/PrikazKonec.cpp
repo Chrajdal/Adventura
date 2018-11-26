@@ -1,6 +1,9 @@
 #include "PrikazKonec.h"
 
-PrikazKonec::PrikazKonec(const std::string & jmeno, const Hra * hra)
+#include "Hra.h"
+
+
+PrikazKonec::PrikazKonec(const std::string & jmeno, Hra * hra)
 	: IPrikaz(jmeno),
 	odkaz_na_hru (hra)
 {
@@ -15,4 +18,9 @@ PrikazKonec::PrikazKonec(const PrikazKonec & src)
 
 PrikazKonec::~PrikazKonec()
 {
+}
+
+void PrikazKonec::proved(const std::vector<std::string> & parametry)
+{
+	odkaz_na_hru->ukonci_hru();
 }

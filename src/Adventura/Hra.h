@@ -7,7 +7,8 @@
 #include <iterator>
 #include <vector>
 
-class PrikazKonec;
+#include "HraFWD.h"
+#include "PrikazKonecFWD.h"
 
 #include "SeznamPrikazu.h"
 #include "Batoh.h"
@@ -24,6 +25,10 @@ public:
 	inline bool konec_hry(void)const
 	{
 		return je_konec;
+	}
+	inline void ukonci_hru(void)
+	{
+		je_konec = true;
 	}
 
 	void zpracuj(const std::string & prikaz);
