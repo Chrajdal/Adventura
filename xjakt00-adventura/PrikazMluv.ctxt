@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.params=plan\ hra
+comment0.target=PrikazMluv(HerniPlan,\ Hra)
+comment0.text=\r\n\ \ Konstruktor\ t\u0159\u00EDdy.\r\n\ \ \r\n\ \ @param\ plan\ odkaz\ na\ hern\u00ED\ pl\u00E1n.\r\n\ \ @param\ hra\ \ odkaz\ na\ hru.\r\n
+comment1.params=parametry
+comment1.target=java.lang.String\ proved(java.lang.String)
+comment1.text=\r\n\ \ Zkontroluje\ parametry\ a\ dal\u0161\u00ED\ n\u00E1le\u017Eitosti,\ pot\u00E9\ zavol\u00E1\ metodu,\ kter\u00E1\ zpracuje\r\n\ \ repliky\ dan\u00E9\ osoby.\r\n
+comment2.params=
+comment2.target=java.lang.String\ getNazev()
+comment2.text=\r\n\ \ Metoda\ vrac\u00ED\ n\u00E1zev\ p\u0159\u00EDkazu\ (slovo\ kter\u00E9\ pou\u017E\u00EDv\u00E1\ hr\u00E1\u010D\ pro\ jeho\ vyvol\u00E1n\u00ED)\r\n\ \ \r\n\ \ @\ return\ nazev\ prikazu\r\n
+numComments=3

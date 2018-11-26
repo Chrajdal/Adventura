@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.params=batoh\ plan\ hra
+comment0.target=PrikazKup(Batoh,\ HerniPlan,\ Hra)
+comment0.text=\r\n\ \ Konstruktor\ t\u0159\u00EDdy.\r\n\ \ \r\n\ \ @param\ \ plan\ \ \ \ herni\ plan.\r\n\ \ @param\ \ batoh\ \ \ odkaz\ na\ hr\u00E1\u010D\u016Fv\ batoh.\r\n\ \ @param\ \ hra\ \ \ \ \ odkaz\ na\ hru\r\n
+comment1.params=parametry
+comment1.target=java.lang.String\ proved(java.lang.String)
+comment1.text=\r\n\ \ Nejd\u0159\u00EDve\ kontroluje,\ jestli\ je\ zadn\u00FD\ parametr\ a\ pak\ v\u0161echny\ dal\u0161\u00ED\ n\u00E1le\u017Eitosti\ -\r\n\ \ nap\u0159.\ jestli\ se\ vejde\ do\ batohu\ apod.\ V\ p\u0159\u00EDpad\u011B,\ \u017Ee\ v\u0161echno\ dob\u0159e\ dopadne,\ p\u0159id\u00E1\r\n\ \ hr\u00E1\u010Di\ koupen\u00FD\ p\u0159edm\u011Bt\ do\ batohu\ a\ odebere\ mu\ pen\u00EDze.\ Ned\u00E1\ se\ uplatnit\ na\ v\u011Bci,\ kter\u00E9\r\n\ \ jsou\ polo\u017Eeny.\r\n
+comment2.params=
+comment2.target=java.lang.String\ getNazev()
+comment2.text=\r\n\r\n
+numComments=3
