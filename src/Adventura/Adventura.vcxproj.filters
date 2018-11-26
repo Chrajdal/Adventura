@@ -83,7 +83,7 @@
     <ClInclude Include="HraFWD.h">
       <Filter>Hlavičkové soubory</Filter>
     </ClInclude>
-    <ClInclude Include="PrikazKonecFWD.h">
+    <ClInclude Include="PrikazyFWD.h">
       <Filter>Hlavičkové soubory</Filter>
     </ClInclude>
   </ItemGroup>

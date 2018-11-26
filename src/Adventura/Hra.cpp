@@ -6,13 +6,11 @@ Hra::Hra()
 	PrikazKonec * k = new PrikazKonec("konec", this);
 	platne_prikazy.pridej_prikaz(k);
 
-	std::cout << "Platne prikazy - Hra::Hra(): " << std::endl;
-	auto plat_prik = platne_prikazy.nazvy_prikazu();
-	for (auto & i : plat_prik)
-		std::cout << i << " ";
-	std::cout << std::endl;
-
-
+	//std::cout << "Platne prikazy - Hra::Hra(): " << std::endl;
+	//auto plat_prik = platne_prikazy.nazvy_prikazu();
+	//for (auto & i : plat_prik)
+	//	std::cout << i << " ";
+	//std::cout << std::endl;
 }
 
 Hra::~Hra()
@@ -40,7 +38,6 @@ void Hra::rozluc(void) const
 		std::string("+-----------------------------------------------------------------------------+\n") +
 		std::string("|                    Dik, ze jste si zahrali. Ahoj.                           |\n") +
 		std::string("+-----------------------------------------------------------------------------+\n");
-		
 }
 
 void Hra::zpracuj(std::string prikaz)
@@ -57,7 +54,10 @@ void Hra::zpracuj(std::string prikaz)
 
 	if (prikaz.empty())
 	{
-		std::cout << "Nevim co tim myslis, prazdny prikaz nelze provest. O.o \n";
+		std::cout <<
+			std::string("+-----------------------------------------------------------------------------+\n") +
+			std::string("| Nevim co tim myslis, prazdny prikaz nelze provest. O.o                      |\n") +
+			std::string("+-----------------------------------------------------------------------------+\n");
 		return;
 	}
 	std::istringstream iss(prikaz);
@@ -76,7 +76,9 @@ void Hra::zpracuj(std::string prikaz)
 	}
 	else
 	{
-		std::cout << "Nevim co tim myslis, tento prikaz neznam.\n";
+		std::cout <<
+			std::string("+-----------------------------------------------------------------------------+\n") +
+			std::string("| Nevim co tim myslis, tento prikaz neznam.                                   |\n") +
+			std::string("+-----------------------------------------------------------------------------+\n");
 	}
-	
 }

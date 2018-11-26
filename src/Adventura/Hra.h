@@ -8,7 +8,7 @@
 #include <vector>
 
 #include "HraFWD.h"
-#include "PrikazKonecFWD.h"
+#include "PrikazyFWD.h"
 
 #include "SeznamPrikazu.h"
 #include "Batoh.h"

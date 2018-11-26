@@ -3,7 +3,7 @@
 
 #include "IPrikaz.h"
 
-#include "PrikazKonecFWD.h"
+#include "PrikazyFWD.h"
 #include "HraFWD.h"
 
 class PrikazKonec : public IPrikaz
