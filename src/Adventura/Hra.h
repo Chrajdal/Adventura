@@ -14,6 +14,10 @@
 #include "Batoh.h"
 #include "HerniPlan.h"
 
+#include "PrikazKonec.h"
+#include "PrikazHraj.h"
+
+
 class Hra
 {
 public:
@@ -22,18 +26,27 @@ public:
 
 	void uvitej(void)const;
 	void rozluc(void)const;
-	inline bool konec_hry(void)const
+
+	inline void zacni_hru(void)
 	{
-		return je_konec;
+		je_konec = 1;
+	}
+	inline bool probehl_zacatek_hry(void) const
+	{
+		return je_konec != 0;
+	}
+	inline bool konec_hry(void) const
+	{
+		return je_konec == 300;
 	}
 	inline void ukonci_hru(void)
 	{
-		je_konec = true;
+		je_konec = 300;
 	}
 
 	void zpracuj(std::string prikaz);
 private:
-	bool je_konec;
+	int je_konec; // 0 je zacatek, 1 az (max_cas - 1) je prubeh, max_cas a vice je konec_hry
 
 	SeznamPrikazu platne_prikazy;
 	Batoh batoh;

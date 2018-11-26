@@ -2,15 +2,18 @@
 
 Hra::Hra()
 {
-	je_konec = false;
+	je_konec = 0;
 	PrikazKonec * k = new PrikazKonec("konec", this);
 	platne_prikazy.pridej_prikaz(k);
 
-	//std::cout << "Platne prikazy - Hra::Hra(): " << std::endl;
-	//auto plat_prik = platne_prikazy.nazvy_prikazu();
-	//for (auto & i : plat_prik)
-	//	std::cout << i << " ";
-	//std::cout << std::endl;
+	PrikazHraj * hraj = new PrikazHraj("hraj", this, &herni_plan);
+	platne_prikazy.pridej_prikaz(hraj);
+
+	std::cout << "Platne prikazy - Hra::Hra(): " << std::endl;
+	auto plat_prik = platne_prikazy.nazvy_prikazu();
+	for (auto & i : plat_prik)
+		std::cout << i << " ";
+	std::cout << std::endl;
 }
 
 Hra::~Hra()

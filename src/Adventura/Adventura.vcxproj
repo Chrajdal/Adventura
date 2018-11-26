@@ -123,6 +123,7 @@
     <ClCompile Include="IPrikaz.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Osoba.cpp" />
+    <ClCompile Include="PrikazHraj.cpp" />
     <ClCompile Include="PrikazKonec.cpp" />
     <ClCompile Include="Prostor.cpp" />
     <ClCompile Include="SeznamPrikazu.cpp" />
@@ -136,6 +137,7 @@
     <ClInclude Include="HraFWD.h" />
     <ClInclude Include="IPrikaz.h" />
     <ClInclude Include="Osoba.h" />
+    <ClInclude Include="PrikazHraj.h" />
     <ClInclude Include="PrikazKonec.h" />
     <ClInclude Include="PrikazyFWD.h" />
     <ClInclude Include="Prostor.h" />
