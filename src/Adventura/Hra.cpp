@@ -22,29 +22,38 @@ Hra::~Hra()
 void Hra::uvitej(void) const
 {
 	std::cout <<
-	std::string("Vitejte!\n") +
-	std::string("Toto je nova adventura, ve ktere bude vasim cilem pripravit co nejlepsi \n") +
-	std::string("party pro kamarada. Ovsem nebudete mit prilis mnoho casu. Vice info o \n") +
-	std::string("pribehu si muzete precist v manualu. \n") +
-	std::string("Napiste 'napoveda', pokud si nevite rady, jak hrat dal nebo potrebujete \n") +
-	std::string("pripomenout prikazy. Hru spustite prikazem 'hraj' a ukoncite prikazem 'konec'. \n") +
-	std::string("Hodne stesti! \n");
+		std::string("+-----------------------------------------------------------------------------+\n") +
+		std::string("|                                 Vitejte!                                    |\n") +
+		std::string("| Toto je nova adventura, ve ktere bude vasim cilem pripravit co nejlepsi     |\n") +
+		std::string("| party pro kamarada. Ovsem nebudete mit prilis mnoho casu. Vice info o       |\n") +
+		std::string("| pribehu si muzete precist v manualu.                                        |\n") +
+		std::string("| Napiste 'napoveda', pokud si nevite rady, jak hrat dal nebo potrebujete     |\n") +
+		std::string("| pripomenout prikazy. Hru spustite prikazem 'hraj'                           |\n") +
+		std::string("| a ukoncite prikazem 'konec'.                                                |\n") +
+		std::string("| Hodne stesti!                                                               |\n") +
+		std::string("+-----------------------------------------------------------------------------+\n");
 }
 
 void Hra::rozluc(void) const
 {
-	std::cout << "Dik, ze jste si zahrali. Ahoj.\n";
+	std::cout <<
+		std::string("+-----------------------------------------------------------------------------+\n") +
+		std::string("|                    Dik, ze jste si zahrali. Ahoj.                           |\n") +
+		std::string("+-----------------------------------------------------------------------------+\n");
+		
 }
 
-void Hra::zpracuj(const std::string & prikaz)
+void Hra::zpracuj(std::string prikaz)
 {
-	std::cout << "----------------------------DEBUG--------------------\n";
-	std::cout << "Platne prikazy: " << std::endl;
-	auto plat_prik = platne_prikazy.nazvy_prikazu();
-	for (auto & i : plat_prik)
-		std::cout << i << " ";
-	std::cout << std::endl;
-	std::cout << "----------------------------DEBUG--------------------\n";
+	//std::cout << "----------------------------DEBUG--------------------\n";
+	//std::cout << "Platne prikazy: " << std::endl;
+	//auto plat_prik = platne_prikazy.nazvy_prikazu();
+	//for (auto & i : plat_prik)
+	//	std::cout << i << " ";
+	//std::cout << std::endl;
+	//std::cout << "----------------------------DEBUG--------------------\n";
+
+	std::transform(prikaz.begin(), prikaz.end(), prikaz.begin(), ::tolower);
 
 	if (prikaz.empty())
 	{
@@ -57,7 +66,7 @@ void Hra::zpracuj(const std::string & prikaz)
 		std::istream_iterator<std::string>{iss},
 		std::istream_iterator<std::string>{}
 	};
-
+	
 	auto platne_nazvy = platne_prikazy.nazvy_prikazu();
 	if (std::find(platne_nazvy.begin(), platne_nazvy.end(), slova[0]) != platne_nazvy.end())
 	{

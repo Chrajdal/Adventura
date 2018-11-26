@@ -31,7 +31,7 @@ public:
 		je_konec = true;
 	}
 
-	void zpracuj(const std::string & prikaz);
+	void zpracuj(std::string prikaz);
 private:
 	bool je_konec;
 

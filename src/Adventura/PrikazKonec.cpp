@@ -22,5 +22,8 @@ PrikazKonec::~PrikazKonec()
 
 void PrikazKonec::proved(const std::vector<std::string> & parametry)
 {
-	odkaz_na_hru->ukonci_hru();
+	if (parametry.empty())
+		odkaz_na_hru->ukonci_hru();
+	else
+		std::cout << "Nelze! Napise pouze 'konec'\n";
 }
