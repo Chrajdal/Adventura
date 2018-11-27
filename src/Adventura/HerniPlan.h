@@ -14,6 +14,8 @@ public:
 	{
 		return aktualni_prostor;
 	}
+
+	bool jdi(const std::string & kam);
 private:
 	std::vector<Prostor> mapa_prostoru;
 	Prostor * aktualni_prostor;

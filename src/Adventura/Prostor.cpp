@@ -15,6 +15,11 @@ void Prostor::pridej_vychod(const Prostor & p)
 	vychody.insert(p);
 }
 
+bool Prostor::je_vychod(const std::string & vychod)const
+{
+	return (vychody.find(Prostor(vychod, "", false)) != vychody.end());
+}
+
 void spoj_sousedy(Prostor & a, Prostor & b)
 {
 	a.pridej_vychod(b);

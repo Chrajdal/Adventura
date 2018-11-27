@@ -1,5 +1,6 @@
 #pragma once
 
+#include <algorithm>
 #include <iostream>
 #include <string>
 #include <vector>
@@ -15,7 +16,7 @@ public:
 	Prostor(const std::string & nazev_prostoru, const std::string & popis_prostoru, bool je_prostor_obchod)
 		: nazev(nazev_prostoru), popis(popis_prostoru), je_obchod(je_prostor_obchod)
 	{
-
+		std::transform(nazev.begin(), nazev.end(), nazev.begin(), ::tolower);
 	}
 
 	//Prostor(const Prostor & src)
@@ -37,10 +38,18 @@ public:
 	void pridej_osoby(const Osoba & o);
 	void pridej_vychod(const Prostor & p);
 
+	bool je_vychod(const std::string & vychod)const;
+	
+
 	void vypis_veci(void)const;
 	void vypis_osoby(void)const;
 	void vypis_vychody(void)const;
 
+
+	inline std::string get_jmeno(void) const
+	{
+		return nazev;
+	}
 	inline std::string get_popis(void) const
 	{
 		return popis;

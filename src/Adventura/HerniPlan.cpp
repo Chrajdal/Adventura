@@ -54,7 +54,20 @@ HerniPlan::HerniPlan()
 	aktualni_prostor = &mapa_prostoru[0];
 }
 
-
 HerniPlan::~HerniPlan()
 {
+}
+
+bool HerniPlan::jdi(const std::string & kam)
+{
+	if (aktualni_prostor->je_vychod(kam) == true)
+	{
+		for(auto & i : mapa_prostoru)
+			if (i.get_jmeno() == kam)
+			{
+				aktualni_prostor = &i;
+				return true;
+			}
+	}
+	return false;
 }

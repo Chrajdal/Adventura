@@ -15,7 +15,27 @@ void PrikazJdi::proved(const std::vector<std::string> & parametry)
 {
 	if (parametry.size() == 1)
 	{
-
+		//std::cout << "----------------------------DEBUG--------------------\n";
+		//std::cout << odkaz_na_plan->get_aktualni_prostor()->get_jmeno() << std::endl;
+		//odkaz_na_plan->get_aktualni_prostor()->vypis_vychody();
+		//std::cout << "----------------------------DEBUG--------------------\n";
+		if (odkaz_na_plan->jdi(parametry[0]) == true)
+		{
+			auto aktualni_prostor = odkaz_na_plan->get_aktualni_prostor()->get_jmeno();
+			int mezer = 36 - aktualni_prostor.size();
+			std::cout <<
+				std::string("+-----------------------------------------------------------------------------+\n") +
+				std::string("|                          Jsi v prostoru ") + 
+				                                 aktualni_prostor + std::string(mezer, ' ') + std::string("|\n") +
+				std::string("+-----------------------------------------------------------------------------+\n");
+		}
+		else
+		{
+			std::cout <<
+				std::string("+-----------------------------------------------------------------------------+\n") +
+				std::string("|                          Tam se odsud jit neda                              |\n") +
+				std::string("+-----------------------------------------------------------------------------+\n");
+		}
 	}
 	else
 	{
