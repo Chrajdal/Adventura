@@ -16,7 +16,7 @@
 
 #include "PrikazKonec.h"
 #include "PrikazHraj.h"
-
+#include "PrikazJdi.h"
 
 class Hra
 {

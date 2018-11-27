@@ -9,6 +9,9 @@ Hra::Hra()
 	PrikazHraj * hraj = new PrikazHraj("hraj", this, &herni_plan);
 	platne_prikazy.pridej_prikaz(hraj);
 
+	PrikazJdi * jdi = new PrikazJdi("jdi", this, &herni_plan);
+	platne_prikazy.pridej_prikaz(jdi);
+
 	//std::cout << "----------------------------DEBUG--------------------\n";
 	//std::cout << "Platne prikazy - Hra::Hra(): " << std::endl;
 	//auto plat_prik = platne_prikazy.nazvy_prikazu();

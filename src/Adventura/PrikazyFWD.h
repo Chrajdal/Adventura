@@ -2,9 +2,9 @@
 
 class PrikazKonec;
 class PrikazHraj;
+class PrikazJdi;
 class PrikazCoJe;
 class PrikazDej;
-class PrikazJdi;
 class PrikazKup;
 class PrikazMluv;
 class PrikazNapoveda;
