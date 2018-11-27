@@ -37,8 +37,7 @@ public:
 		//std::cout << "pridavam prikaz: " << std::endl;
 		//std::cout << p->nazev() << std::endl;
 		//std::cout << "----------------------------DEBUG--------------------\n";
-		
-		
+				
 		if (je_platny(p->nazev()) == true)
 		{
 			return;
