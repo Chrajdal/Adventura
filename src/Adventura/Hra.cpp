@@ -9,9 +9,6 @@ Hra::Hra()
 	PrikazHraj * hraj = new PrikazHraj("hraj", this, &herni_plan);
 	platne_prikazy.pridej_prikaz(hraj);
 
-	PrikazJdi * jdi = new PrikazJdi("jdi", this, &herni_plan);
-	platne_prikazy.pridej_prikaz(jdi);
-
 	//std::cout << "----------------------------DEBUG--------------------\n";
 	//std::cout << "Platne prikazy - Hra::Hra(): " << std::endl;
 	//auto plat_prik = platne_prikazy.nazvy_prikazu();
@@ -42,6 +39,40 @@ void Hra::uvitej(void) const
 		std::string("|                                                                             |\n") +
 		std::string("|                               Hodne stesti!                                 |\n") +
 		std::string("+-----------------------------------------------------------------------------+\n");
+}
+
+void Hra::dej_hraci_info(void) const
+{
+	std::cout <<
+		std::string("+-----------------------------------------------------------------------------+\n") +
+		std::string("|                                                                             |\n");
+
+	auto dlouhy_popis = herni_plan.get_aktualni_prostor()->get_dlouhy_popis();
+	for (const auto & i : dlouhy_popis)
+	{
+		int mezerL = (75 - (int)i.size()) / 2;
+		int mezerR = (75 - (int)i.size()) / 2;
+		if ((mezerL + mezerR + i .size()) < 75)
+			mezerR++;
+		std::cout << "| ";
+		//std::cout << std::string(mezerL, ' ');
+		std::cout << i;
+		//std::cout << std::string(mezerR, ' ');
+		std::cout << " |\n";
+	}
+
+	std::cout <<
+		std::string("|                                                                             |\n") +
+		std::string("+-----------------------------------------------------------------------------+\n");
+}
+void Hra::inicializuj_hru(void)
+{
+	PrikazJdi * jdi = new PrikazJdi("jdi", this, &herni_plan);
+	platne_prikazy.pridej_prikaz(jdi);
+
+	std::cout << "----------------------------DEBUG--------------------\n";
+	std::cout << "TODO: NAINICIALIZOVAT HRU\n";
+	std::cout << "----------------------------DEBUG--------------------\n";	
 }
 
 void Hra::rozluc(void) const

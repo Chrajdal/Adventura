@@ -54,6 +54,16 @@ public:
 	{
 		return popis;
 	}
+	std::vector<std::string> get_dlouhy_popis(void) const
+	{
+		std::vector<std::string> res;
+		res.push_back(std::string("Jsi v prostoru ") + nazev + std::string(". ") + popis + std::string(" a muzes jit:"));
+		for (const auto & i : vychody)
+		{
+			res.push_back(i.get_jmeno());
+		}
+		return res;
+	}
 
 	// just to satisfy std::set requirements
 	bool operator < (const Prostor & src) const

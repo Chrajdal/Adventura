@@ -45,6 +45,8 @@ public:
 	}
 
 	void zpracuj(std::string prikaz);
+	void dej_hraci_info(void) const;
+	void inicializuj_hru(void);
 private:
 	int je_konec; // 0 je zacatek, 1 az (max_cas - 1) je prubeh, max_cas a vice je konec_hry
 

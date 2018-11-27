@@ -17,11 +17,6 @@ void PrikazHraj::proved(const std::vector<std::string>& parametry)
 	{
 		if (odkaz_na_hru->probehl_zacatek_hry() == false)
 		{
-			std::string curr_prostor = odkaz_na_plan->get_aktualni_prostor()->get_popis();
-			int mezerL = 78/2 - 2 - (int)curr_prostor.size() / 2;
-			int mezerR = 78/2 - 2 - (int)curr_prostor.size() / 2;
-			if ((mezerL + mezerR) != 80)
-				mezerR++;
 			std::cout <<
 				std::string("+-----------------------------------------------------------------------------+\n") +
 				std::string("| *Crrrrrrrr*                                                                 |\n") +
@@ -36,10 +31,11 @@ void PrikazHraj::proved(const std::vector<std::string>& parametry)
 				std::string("| Pavel: 'V pohode, je pozvana, bude tam, ahoj.' *klap*                       |\n") +
 				std::string("| Ty: 'Parada, takze mam pet hodin. A jeste musim koupit darek Paje           |\n") +
 				std::string("| a najit svuj ztraceny mobil. Tak do toho!'                                  |\n") +
-				std::string("| ") + std::string(mezerL, ' ') + curr_prostor + std::string(mezerL, ' ') + std::string(" |\n") +
 				std::string("+-----------------------------------------------------------------------------+\n");
 
 			odkaz_na_hru->zacni_hru();
+
+			odkaz_na_hru->inicializuj_hru();
 		}
 		else
 		{
