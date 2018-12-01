@@ -59,7 +59,13 @@ void Hra::dej_hraci_info(void) const
 		std::cout << i;
 		//std::cout << std::string(mezerR, ' ');
 		std::cout << " |\n";
-	}
+	}	
+
+	std::cout << "| Platne prikazy: ";
+	auto res = platne_prikazy.napoveda();
+	for (const auto & i : res)
+		std::cout << i << ", ";
+	std::cout << " |\n";
 
 	std::cout <<
 		std::string("|                                                                             |\n") +

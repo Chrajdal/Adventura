@@ -21,6 +21,14 @@ public:
 		return res;
 	}
 
+	std::vector<std::string> napoveda(void) const
+	{
+		std::vector<std::string> res;
+		for (const auto & i : seznam)
+			res.push_back(i->pouziti());
+		return res;
+	}
+
 	bool je_platny(const std::string & prikaz) const
 	{
 		if (seznam.empty())

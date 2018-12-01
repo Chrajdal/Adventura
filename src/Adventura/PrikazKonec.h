@@ -18,6 +18,10 @@ public:
 	{
 		return jmeno_prikazu;
 	}
+	virtual std::string pouziti(void)const
+	{
+		return "konec";
+	}
 	
 private:
 	Hra * odkaz_na_hru;

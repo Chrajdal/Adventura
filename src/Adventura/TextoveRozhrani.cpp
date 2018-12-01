@@ -23,6 +23,7 @@ void TextoveRozhrani::hraj(void)
 		std::getline(std::cin, prikaz);
 
 		hra.zpracuj(prikaz);
+		
 	}
 	if (hra.konec_hry() == true)
 		hra.rozluc();
