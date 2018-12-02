@@ -2,6 +2,7 @@
 
 Hra::Hra(void)
 {
+
 	CONSOLE_SCREEN_BUFFER_INFO info = {};
 	if (!GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &info))
 	{
@@ -9,12 +10,12 @@ Hra::Hra(void)
 	}
 	else
 	{
-		wnd_h = std::abs(info.srWindow.Right - info.srWindow.Left);
-		wnd_w = std::abs(info.srWindow.Top - info.srWindow.Bottom);
+		wnd_w = std::abs(info.srWindow.Right - info.srWindow.Left);
+		wnd_h = std::abs(info.srWindow.Top - info.srWindow.Bottom);
 
-		std::cout << "----------------------------DEBUG--------------------\n";
-		std::cout << wnd_h << " * " << wnd_w << '\n';
-		std::cout << "----------------------------DEBUG--------------------\n";
+		//std::cout << "----------------------------DEBUG--------------------\n";
+		//std::cout << wnd_h << "*" << wnd_w << '\n';
+		//std::cout << "----------------------------DEBUG--------------------\n";
 	}
 
 	je_konec = 0;
@@ -76,16 +77,25 @@ void Hra::dej_hraci_info(void) const
 		std::cout << " |\n";
 	}	
 
-	std::cout << "| Platne prikazy: ";
-	auto res = platne_prikazy.napoveda();
-	for (const auto & i : res)
-		std::cout << i << ", ";
-	std::cout << " |\n";
+	//std::cout << "| Platne prikazy: ";
+	//auto res = platne_prikazy.napoveda();
+	//for (const auto & i : res)
+	//	std::cout << i << ", ";
+	//std::cout << " |\n";
 
 	std::cout <<
 		std::string("|                                                                             |\n") +
 		std::string("+-----------------------------------------------------------------------------+\n");
 }
+
+void Hra::napoveda(void)const
+{
+	std::cout << "| Platne prikazy: ";
+	auto res = platne_prikazy.napoveda();
+	for (const auto & i : res)
+		std::cout << i << ", ";
+}
+
 void Hra::inicializuj_hru(void)
 {
 	PrikazJdi * jdi = new PrikazJdi("jdi", this, &herni_plan);
@@ -93,7 +103,7 @@ void Hra::inicializuj_hru(void)
 
 	std::cout << "----------------------------DEBUG--------------------\n";
 	std::cout << "TODO: NAINICIALIZOVAT HRU\n";
-	std::cout << "----------------------------DEBUG--------------------\n";	
+	std::cout << "----------------------------DEBUG--------------------\n";
 }
 
 void Hra::rozluc(void) const
