@@ -1,7 +1,22 @@
 #include "Hra.h"
 
-Hra::Hra()
+Hra::Hra(void)
 {
+	CONSOLE_SCREEN_BUFFER_INFO info = {};
+	if (!GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &info))
+	{
+		std::cout << "GetConsoleScreenBufferInfo failed with error: " << GetLastError() << '\n';
+	}
+	else
+	{
+		wnd_h = std::abs(info.srWindow.Right - info.srWindow.Left);
+		wnd_w = std::abs(info.srWindow.Top - info.srWindow.Bottom);
+
+		std::cout << "----------------------------DEBUG--------------------\n";
+		std::cout << wnd_h << " * " << wnd_w << '\n';
+		std::cout << "----------------------------DEBUG--------------------\n";
+	}
+
 	je_konec = 0;
 	PrikazKonec * k = new PrikazKonec("konec", this);
 	platne_prikazy.pridej_prikaz(k);
@@ -55,9 +70,9 @@ void Hra::dej_hraci_info(void) const
 		if ((mezerL + mezerR + i .size()) < 75)
 			mezerR++;
 		std::cout << "| ";
-		//std::cout << std::string(mezerL, ' ');
+		std::cout << std::string(mezerL, ' ');
 		std::cout << i;
-		//std::cout << std::string(mezerR, ' ');
+		std::cout << std::string(mezerR, ' ');
 		std::cout << " |\n";
 	}
 

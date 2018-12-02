@@ -1,8 +1,5 @@
 #include "TextoveRozhrani.h"
 
-#include <iostream>
-#include <string>
-
 TextoveRozhrani::TextoveRozhrani(void)
 {
 	hra.uvitej();

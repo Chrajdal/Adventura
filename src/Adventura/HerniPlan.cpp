@@ -3,7 +3,7 @@
 HerniPlan::HerniPlan()
 {
 	 mapa_prostoru.push_back(Prostor( /* 0  */ "byt", "Zde muzes vydelavat a telefonovat", false));
-	 mapa_prostoru.push_back(Prostor( /* 1  */ "hrackarstvi", "Zde koupis plysaky, balonky a dalsi hracky", true));
+	 mapa_prostoru.push_back(Prostor( /* 1  */ "hrackarstvi", "Zde muzes koupitruzne hracky", true));
 	 mapa_prostoru.push_back(Prostor( /* 2  */ "musicShop", "Zde muzes koupit hudebni CD", true));
 	 mapa_prostoru.push_back(Prostor( /* 3  */ "kvetinarstvi", "Zde muzes koupit kvetiny", true));
 	 mapa_prostoru.push_back(Prostor( /* 4  */ "obchodSOblecenim", "Zde muzes koupit obleceni", true));
