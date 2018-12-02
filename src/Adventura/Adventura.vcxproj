@@ -126,6 +126,7 @@
     <ClCompile Include="PrikazHraj.cpp" />
     <ClCompile Include="PrikazJdi.cpp" />
     <ClCompile Include="PrikazKonec.cpp" />
+    <ClCompile Include="PrikazVolej.cpp" />
     <ClCompile Include="Prostor.cpp" />
     <ClCompile Include="SeznamPrikazu.cpp" />
     <ClCompile Include="TextoveRozhrani.cpp" />
@@ -141,6 +142,7 @@
     <ClInclude Include="PrikazHraj.h" />
     <ClInclude Include="PrikazJdi.h" />
     <ClInclude Include="PrikazKonec.h" />
+    <ClInclude Include="PrikazVolej.h" />
     <ClInclude Include="PrikazyFWD.h" />
     <ClInclude Include="Prostor.h" />
     <ClInclude Include="SeznamPrikazu.h" />
