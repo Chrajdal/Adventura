@@ -5,20 +5,21 @@
 #include "PrikazyFWD.h"
 #include "HraFWD.h"
 
-class PrikazJdi : public IPrikaz
+class PrikazVolej : public IPrikaz
 {
 public:
-	PrikazJdi(const std::string & nazev, Hra * hra, HerniPlan * herni_plan);
-	~PrikazJdi();
+	PrikazVolej(const std::string & nazev, Hra * h, HerniPlan * p);
+	~PrikazVolej();
 
 	void proved(const std::vector<std::string>& parametry);
 	std::string nazev(void) const;
 	virtual std::string pouziti(void)const
 	{
-		return "jdi <kam>";
+		return "volej <koho>";
 	}
 
 private:
 	Hra * odkaz_na_hru;
 	HerniPlan * odkaz_na_plan;
 };
+

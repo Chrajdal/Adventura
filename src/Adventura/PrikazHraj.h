@@ -14,6 +14,10 @@ public:
 
 	virtual void proved(const std::vector<std::string> & parametry = {});
 	virtual std::string nazev(void) const;
+	virtual std::string pouziti(void)const
+	{
+		return "hraj";
+	}
 private:
 	Hra * odkaz_na_hru;
 	HerniPlan * odkaz_na_plan;
