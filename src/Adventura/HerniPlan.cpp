@@ -18,8 +18,6 @@ HerniPlan::HerniPlan()
 	// todo
 	// pridat veci k nakupu do obchodu
 
-	// todo
-	// spojit sousedy
 	spoj_sousedy(mapa_prostoru[0], mapa_prostoru[8]); // byt --- seifertova
 	
 	spoj_sousedy(mapa_prostoru[8], mapa_prostoru[1]);  // seifertova --- hrackarstvi
@@ -52,6 +50,63 @@ HerniPlan::HerniPlan()
 	//std::cout << "----------------------------DEBUG--------------------\n";
 
 	aktualni_prostor = &mapa_prostoru[0];
+
+	std::vector<std::string> bezdakovi_texty_pred =
+	{
+		std::string("Bezdomovec: 'Hele, kamo, mam tady mobil, nechces? Dam ti ho za dve krabicky.' \n")
+		+ "Ty: 'To bude urcite ten muj, co sem ho vcera zratil. No co, asi mi nezbyde nez pro ty cigarety zajit.'",
+		std::string("Bezdomovec: 'Pst, pod sem' \n") + "Ty: 'Promin, specham, mozna potom.'"
+	};
+	std::vector<std::string> bezdakovi_texty_po = { "Bezdomovec: 'dik za ty cigara, kamo'" };
+	Osoba bezdomovec("bezdomovec", "pachnouci bezdak", bezdakovi_texty_pred, bezdakovi_texty_po);
+	bezdomovec.nastav_kyzenou_vec("cigarety", 2);
+
+	mapa_prostoru[5].pridej_osoby(bezdomovec); // bezdomovec 'parkuje' v parku
+	
+	std::string divkaKvetina, divkaHudba, divkaObleceni, divkaSperky, divkaAlkohol;
+	{
+		auto kvetiny = { "ruze", "lilie", "orchidej" };
+		divkaKvetina = *(kvetiny.begin() + rand() % kvetiny.size());
+	}
+	{
+		auto hudba = { "Eminem","Offspring","blink-182","Madonna","Marpo","VypsanaFixa" };
+		divkaHudba = *(hudba.begin() + rand() % hudba.size());
+	}
+	{
+		auto obleceni = { "triko","kalhoty","mikina","spodnipradlo","kostym" };
+		divkaObleceni = *(obleceni.begin() + rand() % obleceni.size());
+	}
+	{
+		auto sperky = { "zlateNausnice","stribrneNausnice","nausnice","zlatyPrstynek","stribrnyPrstynek","prstynek" };
+		divkaSperky = *(sperky.begin() + rand() % sperky.size());		
+	}
+	{
+		auto alkohol = { "rum","vodka","basapiva","vino" };
+		divkaAlkohol = *(alkohol.begin() + rand() % alkohol.size());
+	}
+
+	std::vector<std::string> paja_texty_pred =
+	{
+		"Paja: 'Moc se tesim na vecer.'",
+		"Paja: 'Vcera jsem byla s kamaradkou venku, bylo to super.'",
+		"Paja: 'Slusi mi to dneska? Co myslis?'",
+		"Paja: 'Moje nejoblibenejsi kytka je rozhodne " + divkaKvetina + "'",
+		"Paja: 'Nejradsi si pustim " + divkaHudba + "'",
+		"Paja: 'Docela by se mi ted hodilo nejaky obleceni, treba " + divkaObleceni + ".'",
+		"Paja: 'Hrozne bych si prala " + divkaSperky + ".'",
+		"Paja: 'No, vzdyt vis, ze moc nepiju, ale kdyz uz, tak bych jedine " + divkaAlkohol + ".'",
+		"Paja: 'Segra je ted nejaka nemocna, snad to nechytnu od ni.'",
+		"Paja: 'Vis, ze budeme mit pejska? To je super, vid?'" 
+	};
+	std::vector<std::string> paja_texty_po =
+	{
+		
+	};
+
+	Osoba divka("Paja", "tvoje divka", paja_texty_pred, paja_texty_po);
+	mapa_prostoru[7].pridej_osoby(divka);
+	
+
 }
 
 HerniPlan::~HerniPlan()
@@ -70,4 +125,9 @@ bool HerniPlan::jdi(const std::string & kam)
 			}
 	}
 	return false;
+}
+
+void HerniPlan::pozvi_cloveka(const Osoba & o)
+{
+
 }

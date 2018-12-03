@@ -2,7 +2,6 @@
 
 Hra::Hra(void)
 {
-
 	CONSOLE_SCREEN_BUFFER_INFO info = {};
 	if (!GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &info))
 	{
@@ -41,26 +40,26 @@ Hra::~Hra()
 void Hra::uvitej(void) const
 {
 	std::cout <<
-		std::string("+-----------------------------------------------------------------------------+\n") +
-		std::string("|                                                                             |\n") +
+		std::string("+") + std::string(wnd_w - 2, '-') + std::string("+\n") +
+		std::string("|") + std::string(wnd_w - 2, ' ') + std::string("|\n") +
 		std::string("|                                 Vitejte!                                    |\n") +
-		std::string("|                                                                             |\n") +
+		std::string("|") + std::string(wnd_w - 2, ' ') + std::string("|\n") +
 		std::string("| Toto je nova adventura, ve ktere bude vasim cilem pripravit co nejlepsi     |\n") +
 		std::string("| party pro kamarada. Ovsem nebudete mit prilis mnoho casu. Vice info o       |\n") +
 		std::string("| pribehu si muzete precist v manualu.                                        |\n") +
-		std::string("|                                                                             |\n") +
+		std::string("|") + std::string(wnd_w - 2, ' ') + std::string("|\n") +
 		std::string("| Napiste 'napoveda', pokud si nevite rady, jak hrat dal nebo potrebujete     |\n") +
 		std::string("| pripomenout prikazy. Hru spustite prikazem 'hraj'                           |\n") +
 		std::string("| a ukoncite prikazem 'konec'.                                                |\n") +
-		std::string("|                                                                             |\n") +
+		std::string("|") + std::string(wnd_w - 2, ' ') + std::string("|\n") +
 		std::string("|                               Hodne stesti!                                 |\n") +
-		std::string("+-----------------------------------------------------------------------------+\n");
+		std::string("+") + std::string(wnd_w - 2, '-') + std::string("+\n");
 }
 
 void Hra::dej_hraci_info(void) const
 {
 	std::cout <<
-		std::string("+-----------------------------------------------------------------------------+\n") +
+		std::string("+") + std::string(wnd_w - 1, '-') + std::string("+\n") +
 		std::string("|                                                                             |\n");
 
 	auto dlouhy_popis = herni_plan.get_aktualni_prostor()->get_dlouhy_popis();
@@ -77,15 +76,9 @@ void Hra::dej_hraci_info(void) const
 		std::cout << " |\n";
 	}	
 
-	//std::cout << "| Platne prikazy: ";
-	//auto res = platne_prikazy.napoveda();
-	//for (const auto & i : res)
-	//	std::cout << i << ", ";
-	//std::cout << " |\n";
-
 	std::cout <<
 		std::string("|                                                                             |\n") +
-		std::string("+-----------------------------------------------------------------------------+\n");
+		std::string("+") + std::string(wnd_w - 1, '-') + std::string("+\n");
 }
 
 void Hra::napoveda(void)const
@@ -101,17 +94,17 @@ void Hra::inicializuj_hru(void)
 	PrikazJdi * jdi = new PrikazJdi("jdi", this, &herni_plan);
 	platne_prikazy.pridej_prikaz(jdi);
 
-	std::cout << "----------------------------DEBUG--------------------\n";
-	std::cout << "TODO: NAINICIALIZOVAT HRU\n";
-	std::cout << "----------------------------DEBUG--------------------\n";
+	//std::cout << "----------------------------DEBUG--------------------\n";
+	//std::cout << "TODO: NAINICIALIZOVAT HRU\n";
+	//std::cout << "----------------------------DEBUG--------------------\n";
 }
 
 void Hra::rozluc(void) const
 {
 	std::cout <<
-		std::string("+-----------------------------------------------------------------------------+\n") +
-		std::string("|                    Dik, ze jste si zahrali. Ahoj.                           |\n") +
-		std::string("+-----------------------------------------------------------------------------+\n");
+		std::string("+") + std::string(wnd_w - 1, '-') + std::string("+\n") +
+		std::string("| Dik, ze jste si zahrali. Ahoj.\n") +
+		std::string("+") + std::string(wnd_w - 1, '-') + std::string("+\n");
 }
 
 void Hra::zpracuj(std::string prikaz)

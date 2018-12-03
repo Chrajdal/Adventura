@@ -22,10 +22,10 @@ void PrikazJdi::proved(const std::vector<std::string> & parametry)
 		if (odkaz_na_plan->jdi(parametry[0]) == true)
 		{
 			auto aktualni_prostor = odkaz_na_plan->get_aktualni_prostor()->get_jmeno();
-			int mezer = 36 - (int)aktualni_prostor.size();
+			int mezer = 26 - (int)aktualni_prostor.size();
 			std::cout <<
 				std::string("+-----------------------------------------------------------------------------+\n") +
-				std::string("|                          Jsi v prostoru ") + 
+				std::string("|                          Vstoupil jsi do prostoru ") + 
 				                                 aktualni_prostor + std::string(mezer, ' ') + std::string("|\n") +
 				std::string("+-----------------------------------------------------------------------------+\n");
 		}
