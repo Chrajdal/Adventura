@@ -94,6 +94,21 @@ void Hra::inicializuj_hru(void)
 	PrikazJdi * jdi = new PrikazJdi("jdi", this, &herni_plan);
 	platne_prikazy.pridej_prikaz(jdi);
 
+	PrikazVydelat * vydelej = new PrikazVydelat("vydelat", this, &herni_plan, &batoh);
+	platne_prikazy.pridej_prikaz(vydelej);
+
+	PrikazVolej * volej = new PrikazVolej("volej", this, &herni_plan, &batoh);
+	platne_prikazy.pridej_prikaz(volej);
+
+	PrikazCoJe * coje = new PrikazCoJe("coje", this, &herni_plan, &batoh);
+	platne_prikazy.pridej_prikaz(coje);
+
+	PrikazDej * dej = new PrikazDej("dej", this, &herni_plan, &batoh);
+	platne_prikazy.pridej_prikaz(dej);
+
+	PrikazKup * kup = new PrikazKup("kup", this, &herni_plan, &batoh);
+	platne_prikazy.pridej_prikaz(kup);
+
 	//std::cout << "----------------------------DEBUG--------------------\n";
 	//std::cout << "TODO: NAINICIALIZOVAT HRU\n";
 	//std::cout << "----------------------------DEBUG--------------------\n";

@@ -18,6 +18,11 @@
 #include "PrikazKonec.h"
 #include "PrikazHraj.h"
 #include "PrikazJdi.h"
+#include "PrikazVydelat.h"
+#include "PrikazVolej.h"
+#include "PrikazCoJe.h"
+#include "PrikazDej.h"
+#include "PrikazKup.h"
 
 class Hra
 {
@@ -61,5 +66,3 @@ private:
 	HerniPlan herni_plan;
 	
 };
-
-

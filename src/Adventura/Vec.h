@@ -15,6 +15,11 @@ public:
 		return nazev < src.nazev;
 	}
 
+	inline std::string jmeno(void)const
+	{
+		return nazev;
+	}
+
 	friend std::ostream & operator << (std::ostream & os, const Vec & src)
 	{
 		return os << src.nazev;

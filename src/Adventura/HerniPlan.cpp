@@ -2,24 +2,22 @@
 
 HerniPlan::HerniPlan()
 {
-	 mapa_prostoru.push_back(Prostor( /* 0  */ "byt", "Zde muzes vydelavat a telefonovat", false));
-	 mapa_prostoru.push_back(Prostor( /* 1  */ "hrackarstvi", "Zde muzes koupitruzne hracky", true));
-	 mapa_prostoru.push_back(Prostor( /* 2  */ "musicShop", "Zde muzes koupit hudebni CD", true));
-	 mapa_prostoru.push_back(Prostor( /* 3  */ "kvetinarstvi", "Zde muzes koupit kvetiny", true));
-	 mapa_prostoru.push_back(Prostor( /* 4  */ "obchodSOblecenim", "Zde muzes koupit obleceni", true));
-	 mapa_prostoru.push_back(Prostor( /* 5  */ "park", "Tady se muzes prochazet", false));
-	 mapa_prostoru.push_back(Prostor( /* 6  */ "superMarket", "Zde koupis temer vsechno", true));
-	 mapa_prostoru.push_back(Prostor( /* 7  */ "bytDivky", "Zde bydli tvoje pritelkyne", false));
-	 mapa_prostoru.push_back(Prostor( /* 8  */ "SeifertovaUlice", "Tady se muzes prochazet", false)); // ulice 1
-	 mapa_prostoru.push_back(Prostor( /* 9  */ "PalackehoUlice", "Tady se muzes prochazet", false));  // ulice 2
-	 mapa_prostoru.push_back(Prostor( /* 10 */ "ViklefovaUlice", "Tady se muzes prochazet", false));  // ulice 3
-	 mapa_prostoru.push_back(Prostor( /* 11 */ "zlatnictvi", "Zde muzes koupit sperky", true));
+	mapa_prostoru.push_back(Prostor( /* 0  */ "byt", "Zde muzes vydelavat a telefonovat", false));
+	mapa_prostoru.push_back(Prostor( /* 1  */ "hrackarstvi", "Zde muzes koupitruzne hracky", true));
+	mapa_prostoru.push_back(Prostor( /* 2  */ "musicShop", "Zde muzes koupit hudebni CD", true));
+	mapa_prostoru.push_back(Prostor( /* 3  */ "kvetinarstvi", "Zde muzes koupit kvetiny", true));
+	mapa_prostoru.push_back(Prostor( /* 4  */ "obchodSOblecenim", "Zde muzes koupit obleceni", true));
+	mapa_prostoru.push_back(Prostor( /* 5  */ "park", "Tady se muzes prochazet", false));
+	mapa_prostoru.push_back(Prostor( /* 6  */ "superMarket", "Zde koupis temer vsechno", true));
+	mapa_prostoru.push_back(Prostor( /* 7  */ "bytDivky", "Zde bydli tvoje pritelkyne", false));
+	mapa_prostoru.push_back(Prostor( /* 8  */ "SeifertovaUlice", "Tady se muzes prochazet", false)); // ulice 1
+	mapa_prostoru.push_back(Prostor( /* 9  */ "PalackehoUlice", "Tady se muzes prochazet", false));  // ulice 2
+	mapa_prostoru.push_back(Prostor( /* 10 */ "ViklefovaUlice", "Tady se muzes prochazet", false));  // ulice 3
+	mapa_prostoru.push_back(Prostor( /* 11 */ "zlatnictvi", "Zde muzes koupit sperky", true));
 
-	// todo
-	// pridat veci k nakupu do obchodu
 
 	spoj_sousedy(mapa_prostoru[0], mapa_prostoru[8]); // byt --- seifertova
-	
+
 	spoj_sousedy(mapa_prostoru[8], mapa_prostoru[1]);  // seifertova --- hrackarstvi
 	spoj_sousedy(mapa_prostoru[8], mapa_prostoru[2]);  // seifertova --- musicShop
 	spoj_sousedy(mapa_prostoru[8], mapa_prostoru[3]);  // seifertova --- kvetinarstvi
@@ -32,7 +30,7 @@ HerniPlan::HerniPlan()
 	spoj_sousedy(mapa_prostoru[10], mapa_prostoru[9]); // viklefova --- palackeho
 	spoj_sousedy(mapa_prostoru[10], mapa_prostoru[7]); // viklefova --- bytdivky
 	spoj_sousedy(mapa_prostoru[10], mapa_prostoru[4]); // viklefova --- obleceni
-	
+
 	spoj_sousedy(mapa_prostoru[9], mapa_prostoru[5]);  // palackeho --- park
 	spoj_sousedy(mapa_prostoru[9], mapa_prostoru[4]);  // palackeho --- obleceni
 	spoj_sousedy(mapa_prostoru[9], mapa_prostoru[6]);  // palackeho --- supermarket
@@ -49,6 +47,47 @@ HerniPlan::HerniPlan()
 	//}
 	//std::cout << "----------------------------DEBUG--------------------\n";
 
+	// pridani veci k nakupu do obchodu
+	// hrackarstvi
+	mapa_prostoru[1].pridej_vec(Vec("balonky", "nafukovaci balonky", 20, 50, true));
+	mapa_prostoru[1].pridej_vec(Vec("balonky", "nafukovaci balonky", 20, 50, true));
+	mapa_prostoru[1].pridej_vec(Vec("malyPlysak", "maly plysovy medvidek", 180, 120, true));
+	mapa_prostoru[1].pridej_vec(Vec("velkyPlysak", "velky plysovy medvidek", 500, 300, true));
+	mapa_prostoru[1].pridej_vec(Vec("auticko", "maly anglicak", 250, 60, true));
+	// hudebniny
+	mapa_prostoru[2].pridej_vec(Vec("Eminem", "nejnovejsi cd Eminema", 100, 350, true));
+	mapa_prostoru[2].pridej_vec(Vec("Offspring", "nejnovejsi cd Offspring", 100, 330, true));
+	mapa_prostoru[2].pridej_vec(Vec("blink-182", "starsi cd blink-182", 100, 300, true));
+	mapa_prostoru[2].pridej_vec(Vec("Madonna", "nejnovejsi cd Madonny", 100, 380, true));
+	mapa_prostoru[2].pridej_vec(Vec("Marpo", "nejnovejsi cd Marpa", 100, 150, true));
+	mapa_prostoru[2].pridej_vec(Vec("VypsanaFixa", "nejnovejsi cd Vypsane Fixy", 100, 250, true));
+	mapa_prostoru[2].pridej_vec(Vec("EvaAVasek", "bila orchidej od Evy a Vaska", 100, 220, true));
+	// kvetinarstvi
+	mapa_prostoru[3].pridej_vec(Vec("ruze", "krasna cervena ruze", 70, 50, true));
+	mapa_prostoru[3].pridej_vec(Vec("lilie", "krasna zluta lilie", 70, 70, true));
+	mapa_prostoru[3].pridej_vec(Vec("orchidej", "krasna bila orchidej", 70, 60, true));
+	mapa_prostoru[3].pridej_vec(Vec("listy", "listy jako ozdoba ke kytce", 20, 30, true));
+	// obchod s oblecenim
+	mapa_prostoru[4].pridej_vec(Vec("triko", "pekne znackove tricko", 90, 250, true));
+	mapa_prostoru[4].pridej_vec(Vec("kalhoty", "pekne znackove kalhoty", 160, 690, true));
+	mapa_prostoru[4].pridej_vec(Vec("mikina", "pekna znackova mikina", 150, 500, true));
+	mapa_prostoru[4].pridej_vec(Vec("spodniPradlo", "pekne znackove spodni pradlo", 10, 420, true));
+	mapa_prostoru[4].pridej_vec(Vec("kostym", "zabavny kostym", 180, 350, true));
+	// supermarket
+	mapa_prostoru[6].pridej_vec(Vec("chipsy", "dobre bramburky", 120, 29, true));
+	mapa_prostoru[6].pridej_vec(Vec("rum", "neco silnejsiho k piti", 550, 120, true));
+	mapa_prostoru[6].pridej_vec(Vec("vodka", "neco silnejsiho k piti", 550, 80, true));
+	mapa_prostoru[6].pridej_vec(Vec("vino", "neco lehciho k piti", 550, 180, true));
+	mapa_prostoru[6].pridej_vec(Vec("cigarety", "levne cigarety", 50, 60, true));
+	mapa_prostoru[6].pridej_vec(Vec("chlebicky", "vsechno, co je potreba k priprave chlebicku", 800, 130, true));
+	// zlatnictvi
+	mapa_prostoru[11].pridej_vec(Vec("zlateNausnice", "nausnice vyrobene ze zlata", 5, 2800, true));
+	mapa_prostoru[11].pridej_vec(Vec("stribrneNausnice", "nausnice vyrobene ze stribra", 4, 600, true));
+	mapa_prostoru[11].pridej_vec(Vec("nausnice", "levna bizuterie z Jablonce", 2, 230, true));
+	mapa_prostoru[11].pridej_vec(Vec("zlatyPrstynek", "prstynek vyrobeny ze zlata", 5, 1900, true));
+	mapa_prostoru[11].pridej_vec(Vec("stribrnyPrstynek", "prstynek vyrobeny ze stribra", 3, 5250, true));
+	mapa_prostoru[11].pridej_vec(Vec("prstynek", "bizuterie", 1, 30, true));
+	
 	aktualni_prostor = &mapa_prostoru[0];
 
 	std::vector<std::string> bezdakovi_texty_pred =
@@ -96,7 +135,7 @@ HerniPlan::HerniPlan()
 		"Paja: 'Hrozne bych si prala " + divkaSperky + ".'",
 		"Paja: 'No, vzdyt vis, ze moc nepiju, ale kdyz uz, tak bych jedine " + divkaAlkohol + ".'",
 		"Paja: 'Segra je ted nejaka nemocna, snad to nechytnu od ni.'",
-		"Paja: 'Vis, ze budeme mit pejska? To je super, vid?'" 
+		"Paja: 'Vis, ze budeme mit pejska? To je super, vid?'"
 	};
 	std::vector<std::string> paja_texty_po =
 	{
@@ -105,8 +144,6 @@ HerniPlan::HerniPlan()
 
 	Osoba divka("Paja", "tvoje divka", paja_texty_pred, paja_texty_po);
 	mapa_prostoru[7].pridej_osoby(divka);
-	
-
 }
 
 HerniPlan::~HerniPlan()
@@ -127,7 +164,8 @@ bool HerniPlan::jdi(const std::string & kam)
 	return false;
 }
 
-void HerniPlan::pozvi_cloveka(const Osoba & o)
+bool HerniPlan::pozvi_cloveka(const Osoba & o)
 {
-
+	auto result = pozvani_lide.insert(o);
+	return result.second;
 }

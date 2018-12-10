@@ -1,7 +1,7 @@
 #pragma once
 
 #include <vector>
-
+#include <set>
 
 #include "Prostor.h"
 
@@ -18,10 +18,11 @@ public:
 
 	bool jdi(const std::string & kam);
 
-	void pozvi_cloveka(const Osoba & o);
+	bool pozvi_cloveka(const Osoba & o);
+
 private:
 	std::vector<Prostor> mapa_prostoru;
 	Prostor * aktualni_prostor;
 
-	std::vector<Osoba> pozvani_lide;
+	std::set<Osoba> pozvani_lide;
 };

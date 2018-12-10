@@ -14,20 +14,10 @@ class Prostor
 {
 public:
 	Prostor(const std::string & nazev_prostoru, const std::string & popis_prostoru, bool je_prostor_obchod)
-		: nazev(nazev_prostoru), popis(popis_prostoru), je_obchod(je_prostor_obchod)
+		: nazev(nazev_prostoru), popis(popis_prostoru), obchod(je_prostor_obchod)
 	{
 		std::transform(nazev.begin(), nazev.end(), nazev.begin(), ::tolower);
 	}
-
-	//Prostor(const Prostor & src)
-	//{
-	//	nazev = src.nazev;
-	//	popis = src.popis;
-	//	vychody = src.vychody;
-	//	osoby = src.osoby;
-	//	je_obchod = src.je_obchod;
-	//	veci = src.veci;
-	//}
 
 	~Prostor()
 	{
@@ -39,12 +29,39 @@ public:
 	void pridej_vychod(const Prostor & p);
 
 	bool je_vychod(const std::string & vychod)const;
-	
+	bool je_osoba_v_prostoru(const std::string & jmeno_osoby) const;
+	bool je_vec_v_prostoru(const std::string & jmeno_veci) const;
+
+	inline bool je_obchod(void)const
+	{
+		return this->obchod;
+	}
 
 	void vypis_veci(void)const;
 	void vypis_osoby(void)const;
 	void vypis_vychody(void)const;
 
+	inline int get_cena(const std::string & nazev)const
+	{
+		auto found = veci.find(Vec(nazev, "", 0, 0, true));
+		return found->second;
+	}
+
+	bool prodej_vec(const std::string & nazev)
+	{
+		auto found = veci.find(Vec(nazev, "", 0, 0, false));
+		if (found == veci.end())
+		{
+			return false;
+		}
+		else
+		{
+			found->second--;
+			if (found->second == 0)
+				veci.erase(Vec(nazev, "", 0, 0, false));
+			return true;
+		}
+	}
 
 	inline std::string get_jmeno(void) const
 	{
@@ -65,6 +82,16 @@ public:
 		return res;
 	}
 
+	Osoba * get_osoba(const std::string  & osoba)
+	{
+		for (auto & i : osoby)
+		{
+			if (i.get_jmeno() == osoba)
+				return &i;
+		}
+		return nullptr;
+	}
+
 	// just to satisfy std::set requirements
 	bool operator < (const Prostor & src) const
 	{
@@ -75,7 +102,7 @@ private:
 	std::string popis;
 	std::set<Prostor> vychody;
 	std::vector<Osoba> osoby;
-	bool je_obchod;
+	bool obchod;
 	std::map<Vec, int> veci;
 };
 

@@ -20,6 +20,22 @@ bool Prostor::je_vychod(const std::string & vychod)const
 	return (vychody.find(Prostor(vychod, "", false)) != vychody.end());
 }
 
+bool Prostor::je_osoba_v_prostoru(const std::string & jmeno_osoby) const
+{
+	for (const auto & i : osoby)
+		if (i.get_jmeno() == jmeno_osoby)
+			return true;
+	return false;
+}
+
+bool Prostor::je_vec_v_prostoru(const std::string & jmeno_veci) const
+{
+	for (const auto & i : veci)
+		if (i.first.jmeno() == jmeno_veci)
+			return true;
+	return false;
+}
+
 void spoj_sousedy(Prostor & a, Prostor & b)
 {
 	a.pridej_vychod(b);
@@ -28,15 +44,25 @@ void spoj_sousedy(Prostor & a, Prostor & b)
 
 void Prostor::vypis_veci(void)const
 {
-	for (const auto & i : veci)
+	if (veci.empty())
 	{
-		std::cout << i.first << " - " << i.second << std::endl;
+		std::cout << "V tomto prostoru se nenachazi zadne veci.\n";
+		return;
 	}
+	for (const auto & i : veci)
+		std::cout << i.first << " - " << i.second << "x, ";
+	std::cout << '\n';
 }
 
 void Prostor::vypis_osoby(void)const
 {
-
+	if (osoby.empty())
+		std::cout << "V tomto prostoru se nenachazi zadna osoba.";
+	for (const auto & i : osoby)
+	{
+		std::cout << i.get_jmeno() << ", ";
+	}
+	std::cout << '\n';
 }
 
 void Prostor::vypis_vychody(void)const
