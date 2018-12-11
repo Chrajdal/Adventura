@@ -9,7 +9,7 @@ class PrikazKup; //
 class PrikazMluv; //
 class PrikazPoloz; //
 class PrikazProhledni; //
-class PrikazVezmi;
+class PrikazVezmi; //
 class PrikazVolej; //
 class PrikazVydelat; //
-class PrikazVymen;
+class PrikazVymen; //

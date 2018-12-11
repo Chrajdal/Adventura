@@ -99,6 +99,7 @@ HerniPlan::HerniPlan()
 	std::vector<std::string> bezdakovi_texty_po = { "Bezdomovec: 'dik za ty cigara, kamo'" };
 	Osoba bezdomovec("bezdomovec", "pachnouci bezdak", bezdakovi_texty_pred, bezdakovi_texty_po);
 	bezdomovec.nastav_kyzenou_vec("cigarety", 2);
+	bezdomovec.pridej_vec(Vec("mobil", "tvuj ztraceny mobil", 350, 5000, true));
 
 	mapa_prostoru[5].pridej_osoby(bezdomovec); // bezdomovec 'parkuje' v parku
 	

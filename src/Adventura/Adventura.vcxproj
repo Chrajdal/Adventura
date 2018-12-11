@@ -134,8 +134,10 @@
     <ClCompile Include="PrikazMluv.cpp" />
     <ClCompile Include="PrikazPoloz.cpp" />
     <ClCompile Include="PrikazProhledni.cpp" />
+    <ClCompile Include="PrikazVezmi.cpp" />
     <ClCompile Include="PrikazVolej.cpp" />
     <ClCompile Include="PrikazVydelat.cpp" />
+    <ClCompile Include="PrikazVymen.cpp" />
     <ClCompile Include="Prostor.cpp" />
     <ClCompile Include="SeznamPrikazu.cpp" />
     <ClCompile Include="TextoveRozhrani.cpp" />
@@ -157,8 +159,10 @@
     <ClInclude Include="PrikazMluv.h" />
     <ClInclude Include="PrikazPoloz.h" />
     <ClInclude Include="PrikazProhledni.h" />
+    <ClInclude Include="PrikazVezmi.h" />
     <ClInclude Include="PrikazVolej.h" />
     <ClInclude Include="PrikazVydelat.h" />
+    <ClInclude Include="PrikazVymen.h" />
     <ClInclude Include="PrikazyFWD.h" />
     <ClInclude Include="Prostor.h" />
     <ClInclude Include="SeznamPrikazu.h" />

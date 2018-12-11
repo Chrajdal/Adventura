@@ -50,6 +50,22 @@ public:
 		return Vec("", "", 0, 0, false);
 	}
 
+	bool odeber_vec(const std::string & vec)
+	{
+		auto found = veci_na_zemi.find(Vec(vec, "", 0, 0, false));
+		if (found == veci_na_zemi.end())
+		{
+			return false;
+		}
+		else
+		{
+			found->second--;
+			if (found->second == 0)
+				veci_na_zemi.erase(Vec(vec, "", 0, 0, false));
+			return true;
+		}
+	}
+
 	inline bool je_obchod(void) const
 	{
 		return this->obchod;

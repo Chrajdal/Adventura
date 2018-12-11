@@ -26,6 +26,8 @@
 #include "PrikazProhledni.h"
 #include "PrikazMluv.h"
 #include "PrikazPoloz.h"
+#include "PrikazVezmi.h"
+#include "PrikazVymen.h"
 
 class Hra
 {

@@ -13,8 +13,6 @@ public:
 	{
 		max_veci = 5;
 		max_vaha = 10000;
-		pocet_veci = 0;
-		vaha = 0;
 		penize = 2000;
 		pozvanych_lidi = 0;
 
@@ -48,12 +46,25 @@ public:
 		veci[Vec(vec, "", 1, 1, true)]++;
 	}
 
+	void pridej_vec(const Vec & vec)
+	{
+		veci[vec]++;
+	}
+
 	Vec vrat_vec(const std::string & vec)
 	{
 		for (const auto & i : veci)
 			if (i.first.jmeno() == vec)
 				return i.first;
 		return Vec("", "", 0, 0, false);
+	}
+
+	int pocet_veci(const std::string & vec)
+	{
+		for (const auto & i : veci)
+			if (i.first.jmeno() == vec)
+				return i.second;
+		return 0;
 	}
 
 	bool odeber_vec(const std::string & vec)
@@ -77,8 +88,6 @@ private:
 	std::map<Vec, int> veci;
 	int max_veci;
 	int max_vaha;
-	int pocet_veci;
-	int vaha;
 	int penize;
 	int pozvanych_lidi;
 };

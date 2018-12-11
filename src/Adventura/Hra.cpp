@@ -117,6 +117,12 @@ void Hra::inicializuj_hru(void)
 
 	PrikazPoloz * poloz = new PrikazPoloz("poloz", this, &herni_plan, &batoh);
 	platne_prikazy.pridej_prikaz(poloz);
+
+	PrikazVezmi * vezmi = new PrikazVezmi("vezmi", this, &herni_plan, &batoh);
+	platne_prikazy.pridej_prikaz(vezmi);
+
+	PrikazVymen * vymen = new PrikazVymen("vymen", this, &herni_plan, &batoh);
+	platne_prikazy.pridej_prikaz(vymen);
 }
 
 void Hra::rozluc(void) const
