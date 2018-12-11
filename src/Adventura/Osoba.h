@@ -15,7 +15,7 @@ public:
 
 	inline void nastav_kyzenou_vec(const std::string & vec, int pocet)
 	{
-		vec_co_chci = make_pair(vec, pocet);
+		vec_co_chci[Vec(vec, "", 0, 0, true)]++;
 	}
 
 	inline std::string get_jmeno(void)const
@@ -23,25 +23,28 @@ public:
 		return jmeno;
 	}
 
-	void pridej_vec(const std::string & jmeno, int pocet)
-	{
-		if (jmeno == vec_co_chci.first)
-		{
-			vec_co_chci.second -= pocet;
-			if (vec_co_chci.second <= 0)
-				event_hotov = true;
-		}
-
-		veci[Vec(jmeno, "", 0, 0, false)] += pocet;
-	}
+	//void pridej_vec(const std::string & jmeno, int pocet)
+	//{
+	//	if (jmeno == vec_co_chci.first)
+	//	{
+	//		vec_co_chci.second -= pocet;
+	//		if (vec_co_chci.second <= 0)
+	//			event_hotov = true;
+	//	}
+	//
+	//	veci[Vec(jmeno, "", 0, 0, false)] += pocet;
+	//}
 
 	void pridej_vec(const Vec & v)
 	{
-		if (v.jmeno() == vec_co_chci.first)
+		auto found = vec_co_chci.find(v);
+		if (found != vec_co_chci.end())
 		{
-			vec_co_chci.second--;
-			if (vec_co_chci.second <= 0)
+			if ((--(found->second)) <= 0)
+			{
+				vec_co_chci.erase(found);
 				event_hotov = true;
+			}
 		}
 		veci[v]++;
 	}
@@ -70,7 +73,7 @@ public:
 		return Vec("", "", 0, 0, false);
 	}
 
-	std::pair<std::string, int> vec_kterou_chci(void)const
+	std::map<Vec, int> vec_kterou_chci(void)const
 	{
 		return vec_co_chci;
 	}
@@ -92,6 +95,18 @@ public:
 			return hlasky_pred[rand() % hlasky_pred.size()];
 		}
 	}
+
+	float get_body(void)const
+	{
+		float body = 0;
+		for (const auto & i : vec_co_chci)
+		{
+			if (veci.find(i.first) != veci.end())
+				body += i.second * i.first.cena_veci();
+		}
+		return body;
+	}
+
 private:
 	std::string jmeno;
 	std::string popis;
@@ -101,5 +116,5 @@ private:
 	std::vector<std::string> hlasky_po;
 	bool event_hotov;
 	
-	std::pair<std::string, int> vec_co_chci;
+	std::map<Vec, int> vec_co_chci;
 };

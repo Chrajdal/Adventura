@@ -93,6 +93,11 @@ void Prostor::vypis_veci(void)const
 	}
 }
 
+int Prostor::pocet_pozvanych(void)const
+{
+	return osoby.size();
+}
+
 void Prostor::vypis_osoby(void)const
 {
 	if (osoby.empty())

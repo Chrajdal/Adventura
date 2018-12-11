@@ -50,7 +50,7 @@ void PrikazVymen::proved(const std::vector<std::string> & parametry)
 			return;
 		}
 
-		int kyzeny_pocet = osoba->vec_kterou_chci().second;
+		int kyzeny_pocet = osoba->vec_kterou_chci().begin()->second;
 		if (odkaz_na_batoh->pocet_veci(moje_vec.jmeno()) < kyzeny_pocet)
 		{
 			std::cout << "Nemas dostatecny pocet veci, ktere chces vymenit.\n";

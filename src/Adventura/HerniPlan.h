@@ -20,6 +20,16 @@ public:
 
 	bool pozvi_cloveka(const Osoba & o);
 
+	inline Prostor * get_byt(void)
+	{
+		return &mapa_prostoru[0];
+	}
+
+	inline Osoba * get_divka(void)
+	{
+		return mapa_prostoru[7].get_osoba("paja");
+	}
+
 private:
 	std::vector<Prostor> mapa_prostoru;
 	Prostor * aktualni_prostor;

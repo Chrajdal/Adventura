@@ -2,7 +2,6 @@
 
 #include "Hra.h"
 
-
 PrikazKonec::PrikazKonec(const std::string & jmeno, Hra * hra)
 	: IPrikaz(jmeno),
 	odkaz_na_hru (hra)
@@ -25,5 +24,5 @@ void PrikazKonec::proved(const std::vector<std::string> & parametry)
 	if (parametry.empty())
 		odkaz_na_hru->ukonci_hru();
 	else
-		std::cout << "Nelze! Napise pouze 'konec'\n";
+		std::cout << "Nelze! Napiste pouze 'konec'\n";
 }

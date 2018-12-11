@@ -50,6 +50,11 @@ public:
 		return Vec("", "", 0, 0, false);
 	}
 
+	auto get_polozene_veci(void)const
+	{
+		return veci_na_zemi;
+	}
+
 	bool odeber_vec(const std::string & vec)
 	{
 		auto found = veci_na_zemi.find(Vec(vec, "", 0, 0, false));
@@ -74,6 +79,8 @@ public:
 	void vypis_veci(void)const;
 	void vypis_osoby(void)const;
 	void vypis_vychody(void)const;
+	
+	int pocet_pozvanych(void)const;
 
 	inline int get_cena(const std::string & nazev) const
 	{

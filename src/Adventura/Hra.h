@@ -53,6 +53,23 @@ public:
 	inline void ukonci_hru(void)
 	{
 		je_konec = 300;
+
+		float pocet_bodu = 0.0;
+
+		auto byt = herni_plan.get_byt();
+		int pocet_osob = byt->pocet_pozvanych();
+		pocet_bodu += (pocet_osob + 2) * 10;
+		auto polozene_veci = byt->get_polozene_veci();
+		for (const auto & i : polozene_veci)
+		{
+			pocet_bodu *= i.second + ((float)pocet_osob / i.second);
+		}
+
+		std::cout << "Konecne zacala party, ktera se nakonec protahla do velmi brzkych rannich hodin.\n";
+		std::cout << "Hodnoceni vasi party je nasledujici: " << pocet_bodu << " bodu!\n";
+		std::cout << "Vase divka vas ohodnotila na " << herni_plan.get_divka()->get_body() << " bodu!\n";
+		std::cout << "Timto hra konci. Doufame, ze jste si ji uzili. Nyni muzete hru ukoncit,\n";
+		std::cout << "anebo pokracovat v hrani jen tak. Ahoj!\n";
 	}
 
 	void napoveda(void) const;

@@ -38,15 +38,6 @@ HerniPlan::HerniPlan()
 	spoj_sousedy(mapa_prostoru[5], mapa_prostoru[3]);  // park --- kvetinarstvi
 	spoj_sousedy(mapa_prostoru[5], mapa_prostoru[6]);  // park --- supermarket
 
-	//std::cout << "----------------------------DEBUG--------------------\n";
-	//for (const auto & i : mapa_prostoru)
-	//{
-	//	std::cout << i.get_popis() << " vychody : ";
-	//	i.vypis_vychody();
-	//	std::cout << '\n';
-	//}
-	//std::cout << "----------------------------DEBUG--------------------\n";
-
 	// pridani veci k nakupu do obchodu
 	// hrackarstvi
 	mapa_prostoru[1].pridej_vec(Vec("balonky", "nafukovaci balonky", 20, 50, true));
@@ -78,8 +69,8 @@ HerniPlan::HerniPlan()
 	mapa_prostoru[6].pridej_vec(Vec("rum", "neco silnejsiho k piti", 550, 120, true));
 	mapa_prostoru[6].pridej_vec(Vec("vodka", "neco silnejsiho k piti", 550, 80, true));
 	mapa_prostoru[6].pridej_vec(Vec("vino", "neco lehciho k piti", 550, 180, true));
-	mapa_prostoru[6].pridej_vec(Vec("cigarety", "levne cigarety", 50, 60, true));
-	mapa_prostoru[6].pridej_vec(Vec("chlebicky", "vsechno, co je potreba k priprave chlebicku", 800, 130, true));
+	mapa_prostoru[6].pridej_vec(Vec("cigareta", "levne cigarety", 50, 60, true));
+	mapa_prostoru[6].pridej_vec(Vec("chlebicek", "vsechno, co je potreba k priprave chlebicku", 800, 130, true));
 	// zlatnictvi
 	mapa_prostoru[11].pridej_vec(Vec("zlate_nausnice", "nausnice vyrobene ze zlata", 5, 2800, true));
 	mapa_prostoru[11].pridej_vec(Vec("stribrne_nausnice", "nausnice vyrobene ze stribra", 4, 600, true));
@@ -98,7 +89,7 @@ HerniPlan::HerniPlan()
 	};
 	std::vector<std::string> bezdakovi_texty_po = { "Bezdomovec: 'dik za ty cigara, kamo'" };
 	Osoba bezdomovec("bezdomovec", "pachnouci bezdak", bezdakovi_texty_pred, bezdakovi_texty_po);
-	bezdomovec.nastav_kyzenou_vec("cigarety", 2);
+	bezdomovec.nastav_kyzenou_vec("cigareta", 2);
 	bezdomovec.pridej_vec(Vec("mobil", "tvuj ztraceny mobil", 350, 5000, true));
 
 	mapa_prostoru[5].pridej_osoby(bezdomovec); // bezdomovec 'parkuje' v parku
