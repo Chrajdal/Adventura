@@ -51,8 +51,8 @@ HerniPlan::HerniPlan()
 	// hrackarstvi
 	mapa_prostoru[1].pridej_vec(Vec("balonky", "nafukovaci balonky", 20, 50, true));
 	mapa_prostoru[1].pridej_vec(Vec("balonky", "nafukovaci balonky", 20, 50, true));
-	mapa_prostoru[1].pridej_vec(Vec("malyplysak", "maly plysovy medvidek", 180, 120, true));
-	mapa_prostoru[1].pridej_vec(Vec("velkyplysak", "velky plysovy medvidek", 500, 300, true));
+	mapa_prostoru[1].pridej_vec(Vec("maly_plysak", "maly plysovy medvidek", 180, 120, true));
+	mapa_prostoru[1].pridej_vec(Vec("velky_plysak", "velky plysovy medvidek", 500, 300, true));
 	mapa_prostoru[1].pridej_vec(Vec("auticko", "maly anglicak", 250, 60, true));
 	// hudebniny
 	mapa_prostoru[2].pridej_vec(Vec("eminem", "nejnovejsi cd Eminema", 100, 350, true));
@@ -60,7 +60,7 @@ HerniPlan::HerniPlan()
 	mapa_prostoru[2].pridej_vec(Vec("blink-182", "starsi cd blink-182", 100, 300, true));
 	mapa_prostoru[2].pridej_vec(Vec("madonna", "nejnovejsi cd Madonny", 100, 380, true));
 	mapa_prostoru[2].pridej_vec(Vec("marpo", "nejnovejsi cd Marpa", 100, 150, true));
-	mapa_prostoru[2].pridej_vec(Vec("vypsanaFixa", "nejnovejsi cd Vypsane Fixy", 100, 250, true));
+	mapa_prostoru[2].pridej_vec(Vec("vypsana_fixa", "nejnovejsi cd Vypsane Fixy", 100, 250, true));
 	mapa_prostoru[2].pridej_vec(Vec("evaavasek", "bila orchidej od Evy a Vaska", 100, 220, true));
 	// kvetinarstvi
 	mapa_prostoru[3].pridej_vec(Vec("ruze", "krasna cervena ruze", 70, 50, true));
@@ -71,7 +71,7 @@ HerniPlan::HerniPlan()
 	mapa_prostoru[4].pridej_vec(Vec("triko", "pekne znackove tricko", 90, 250, true));
 	mapa_prostoru[4].pridej_vec(Vec("kalhoty", "pekne znackove kalhoty", 160, 690, true));
 	mapa_prostoru[4].pridej_vec(Vec("mikina", "pekna znackova mikina", 150, 500, true));
-	mapa_prostoru[4].pridej_vec(Vec("spodnipradlo", "pekne znackove spodni pradlo", 10, 420, true));
+	mapa_prostoru[4].pridej_vec(Vec("spodni_pradlo", "pekne znackove spodni pradlo", 10, 420, true));
 	mapa_prostoru[4].pridej_vec(Vec("kostym", "zabavny kostym", 180, 350, true));
 	// supermarket
 	mapa_prostoru[6].pridej_vec(Vec("chipsy", "dobre bramburky", 120, 29, true));
@@ -81,11 +81,11 @@ HerniPlan::HerniPlan()
 	mapa_prostoru[6].pridej_vec(Vec("cigarety", "levne cigarety", 50, 60, true));
 	mapa_prostoru[6].pridej_vec(Vec("chlebicky", "vsechno, co je potreba k priprave chlebicku", 800, 130, true));
 	// zlatnictvi
-	mapa_prostoru[11].pridej_vec(Vec("zlatenausnice", "nausnice vyrobene ze zlata", 5, 2800, true));
-	mapa_prostoru[11].pridej_vec(Vec("stribrnenausnice", "nausnice vyrobene ze stribra", 4, 600, true));
+	mapa_prostoru[11].pridej_vec(Vec("zlate_nausnice", "nausnice vyrobene ze zlata", 5, 2800, true));
+	mapa_prostoru[11].pridej_vec(Vec("stribrne_nausnice", "nausnice vyrobene ze stribra", 4, 600, true));
 	mapa_prostoru[11].pridej_vec(Vec("nausnice", "levna bizuterie z Jablonce", 2, 230, true));
-	mapa_prostoru[11].pridej_vec(Vec("zlatyprstynek", "prstynek vyrobeny ze zlata", 5, 1900, true));
-	mapa_prostoru[11].pridej_vec(Vec("stribrnyprstynek", "prstynek vyrobeny ze stribra", 3, 5250, true));
+	mapa_prostoru[11].pridej_vec(Vec("zlaty_prstynek", "prstynek vyrobeny ze zlata", 5, 1900, true));
+	mapa_prostoru[11].pridej_vec(Vec("stribrny_prstynek", "prstynek vyrobeny ze stribra", 3, 5250, true));
 	mapa_prostoru[11].pridej_vec(Vec("prstynek", "bizuterie", 1, 30, true));
 	
 	aktualni_prostor = &mapa_prostoru[0];
@@ -108,19 +108,19 @@ HerniPlan::HerniPlan()
 		divkaKvetina = *(kvetiny.begin() + rand() % kvetiny.size());
 	}
 	{
-		auto hudba = { "Eminem","Offspring","blink-182","Madonna","Marpo","VypsanaFixa" };
+		auto hudba = { "eminem","offspring","blink-182","madonna","marpo","vypsana_fixa" };
 		divkaHudba = *(hudba.begin() + rand() % hudba.size());
 	}
 	{
-		auto obleceni = { "triko","kalhoty","mikina","spodnipradlo","kostym" };
+		auto obleceni = { "triko","kalhoty","mikina","spodni_pradlo","kostym" };
 		divkaObleceni = *(obleceni.begin() + rand() % obleceni.size());
 	}
 	{
-		auto sperky = { "zlateNausnice","stribrneNausnice","nausnice","zlatyPrstynek","stribrnyPrstynek","prstynek" };
+		auto sperky = { "zlate_nausnice","stribrne_nausnice","nausnice","zlaty_prstynek","stribrny_prstynek","prstynek" };
 		divkaSperky = *(sperky.begin() + rand() % sperky.size());		
 	}
 	{
-		auto alkohol = { "rum","vodka","basapiva","vino" };
+		auto alkohol = { "rum","vodka","basa_piva","vino" };
 		divkaAlkohol = *(alkohol.begin() + rand() % alkohol.size());
 	}
 
@@ -133,7 +133,7 @@ HerniPlan::HerniPlan()
 		"Paja: 'Nejradsi si pustim " + divkaHudba + "'",
 		"Paja: 'Docela by se mi ted hodilo nejaky obleceni, treba " + divkaObleceni + ".'",
 		"Paja: 'Hrozne bych si prala " + divkaSperky + ".'",
-		"Paja: 'No, vzdyt vis, ze moc nepiju, ale kdyz uz, tak bych jedine " + divkaAlkohol + ".'",
+		"Paja: 'No, vzdyt vis, ze moc nepiju, ale kdyz uz, tak bych si dala jedine " + divkaAlkohol + ".'",
 		"Paja: 'Segra je ted nejaka nemocna, snad to nechytnu od ni.'",
 		"Paja: 'Vis, ze budeme mit pejska? To je super, vid?'"
 	};
@@ -142,7 +142,7 @@ HerniPlan::HerniPlan()
 		
 	};
 
-	Osoba divka("Paja", "tvoje divka", paja_texty_pred, paja_texty_po);
+	Osoba divka("paja", "tvoje divka", paja_texty_pred, paja_texty_po);
 	mapa_prostoru[7].pridej_osoby(divka);
 }
 

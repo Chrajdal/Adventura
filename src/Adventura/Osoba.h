@@ -40,6 +40,18 @@ public:
 	{
 		return jmeno < rhs.jmeno;
 	}
+
+	std::string vrat_hlasku(void)const
+	{
+		if (event_hotov == true)
+		{
+			return hlasky_po[rand() % hlasky_po.size()];
+		}
+		else
+		{
+			return hlasky_pred[rand() % hlasky_pred.size()];
+		}
+	}
 private:
 	std::string jmeno;
 	std::string popis;

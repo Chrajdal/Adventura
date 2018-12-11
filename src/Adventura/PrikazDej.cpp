@@ -39,6 +39,7 @@ void PrikazDej::proved(const std::vector<std::string> & parametry)
 
 		auto osoba = aktualni_prostor->get_osoba(parametry[0]);
 		osoba->pridej_vec(parametry[1], 1);
+		odkaz_na_batoh->odeber_vec(parametry[1]);
 
 		std::cout << "Dal jsi vec " << parametry[1] << " osobe " << parametry[0] << '\n';
 	}

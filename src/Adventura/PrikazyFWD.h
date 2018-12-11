@@ -5,10 +5,10 @@ class PrikazHraj; //
 class PrikazJdi; //
 class PrikazCoJe; //
 class PrikazDej; //
-class PrikazKup;
-class PrikazMluv;
-class PrikazPoloz;
-class PrikazProhledni;
+class PrikazKup; //
+class PrikazMluv; //
+class PrikazPoloz; //
+class PrikazProhledni; //
 class PrikazVezmi;
 class PrikazVolej; //
 class PrikazVydelat; //

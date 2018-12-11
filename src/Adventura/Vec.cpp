@@ -9,6 +9,15 @@ Vec::Vec(std::string _nazev, std::string _popis, int _vaha, int _cena, bool _pre
 {
 }
 
+Vec::Vec(const Vec & src)
+	: nazev(src.nazev),
+	popis(src.popis),
+	vaha(src.vaha),
+	cena(src.cena),
+	prenosna(src.prenosna)
+{	
+}
+
 Vec::~Vec()
 {
 }

@@ -7,6 +7,7 @@ class Vec
 {
 public:
 	Vec(std::string _nazev, std::string _popis, int _vaha, int _cena, bool _prenosna);
+	Vec(const Vec & src);
 	~Vec();
 
 	// meeting std::map requirements from class Prostor
@@ -27,7 +28,7 @@ public:
 
 	friend std::ostream & operator << (std::ostream & os, const Vec & src)
 	{
-		return os << src.nazev;
+		return os << src.nazev << " - " << src.popis << ", vazi:" << src.vaha << ", stoji: " << src.cena;
 	}
 private:
 	std::string nazev;

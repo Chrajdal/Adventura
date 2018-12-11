@@ -28,11 +28,29 @@ public:
 	void pridej_osoby(const Osoba & o);
 	void pridej_vychod(const Prostor & p);
 
+	void poloz_vec(const Vec & v);
+
 	bool je_vychod(const std::string & vychod)const;
 	bool je_osoba_v_prostoru(const std::string & jmeno_osoby) const;
 	bool je_vec_v_prostoru(const std::string & jmeno_veci) const;
 
-	inline bool je_obchod(void)const
+	bool je_vec_na_zemi(const std::string & jmeno_veci) const;
+	void vypis_veci_na_zemi(void) const;
+
+	Vec vyber_vec(const std::string & jmeno_veci) const
+	{
+		for (const auto & i : veci)
+			if (i.first.jmeno() == jmeno_veci)
+				return i.first;
+
+		for(const auto & i : veci_na_zemi)
+			if (i.first.jmeno() == jmeno_veci)
+				return i.first;
+
+		return Vec("", "", 0, 0, false);
+	}
+
+	inline bool je_obchod(void) const
 	{
 		return this->obchod;
 	}
@@ -41,7 +59,7 @@ public:
 	void vypis_osoby(void)const;
 	void vypis_vychody(void)const;
 
-	inline int get_cena(const std::string & nazev)const
+	inline int get_cena(const std::string & nazev) const
 	{
 		auto found = veci.find(Vec(nazev, "", 0, 0, true));
 		return found->first.cena_veci();
@@ -104,6 +122,7 @@ private:
 	std::vector<Osoba> osoby;
 	bool obchod;
 	std::map<Vec, int> veci;
+	std::map<Vec, int> veci_na_zemi;
 };
 
 void spoj_sousedy(Prostor & a, Prostor & b);

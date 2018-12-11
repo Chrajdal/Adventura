@@ -73,18 +73,20 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
-      <Optimization>Disabled</Optimization>
+      <Optimization>MaxSpeed</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
-      <Optimization>Disabled</Optimization>
+      <Optimization>MaxSpeed</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -129,6 +131,9 @@
     <ClCompile Include="PrikazJdi.cpp" />
     <ClCompile Include="PrikazKonec.cpp" />
     <ClCompile Include="PrikazKup.cpp" />
+    <ClCompile Include="PrikazMluv.cpp" />
+    <ClCompile Include="PrikazPoloz.cpp" />
+    <ClCompile Include="PrikazProhledni.cpp" />
     <ClCompile Include="PrikazVolej.cpp" />
     <ClCompile Include="PrikazVydelat.cpp" />
     <ClCompile Include="Prostor.cpp" />
@@ -149,6 +154,9 @@
     <ClInclude Include="PrikazJdi.h" />
     <ClInclude Include="PrikazKonec.h" />
     <ClInclude Include="PrikazKup.h" />
+    <ClInclude Include="PrikazMluv.h" />
+    <ClInclude Include="PrikazPoloz.h" />
+    <ClInclude Include="PrikazProhledni.h" />
     <ClInclude Include="PrikazVolej.h" />
     <ClInclude Include="PrikazVydelat.h" />
     <ClInclude Include="PrikazyFWD.h" />

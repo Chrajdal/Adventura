@@ -23,6 +23,9 @@
 #include "PrikazCoJe.h"
 #include "PrikazDej.h"
 #include "PrikazKup.h"
+#include "PrikazProhledni.h"
+#include "PrikazMluv.h"
+#include "PrikazPoloz.h"
 
 class Hra
 {

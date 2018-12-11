@@ -48,6 +48,30 @@ public:
 		veci[Vec(vec, "", 1, 1, true)]++;
 	}
 
+	Vec vrat_vec(const std::string & vec)
+	{
+		for (const auto & i : veci)
+			if (i.first.jmeno() == vec)
+				return i.first;
+		return Vec("", "", 0, 0, false);
+	}
+
+	bool odeber_vec(const std::string & vec)
+	{
+		auto found = veci.find(Vec(vec, "", 0, 0, false));
+		if (found == veci.end())
+		{
+			return false;
+		}
+		else
+		{
+			found->second--;
+			if (found->second == 0)
+				veci.erase(Vec(vec, "", 0, 0, false));
+			return true;
+		}
+	}
+
 	bool mam_vec(const std::string & jmeno_veci) const;
 private:
 	std::map<Vec, int> veci;
@@ -58,4 +82,3 @@ private:
 	int penize;
 	int pozvanych_lidi;
 };
-

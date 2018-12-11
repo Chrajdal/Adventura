@@ -5,6 +5,31 @@ void Prostor::pridej_vec(const Vec & v)
 	veci[v]++;
 }
 
+void Prostor::poloz_vec(const Vec & v)
+{
+	veci_na_zemi[v]++;
+}
+
+bool Prostor::je_vec_na_zemi(const std::string & jmeno_veci) const
+{
+	for (const auto & i : veci_na_zemi)
+		if (i.first.jmeno() == jmeno_veci)
+			return true;
+	return false;
+}
+
+void Prostor::vypis_veci_na_zemi(void)const
+{
+	if (veci.empty())
+	{
+		std::cout << "V tomto prostoru se nenachazi zadne veci.\n";
+		return;
+	}
+	for (const auto & i : veci_na_zemi)
+		std::cout << i.first.jmeno() << " - " << i.second << "x, ";
+	std::cout << '\n';
+}
+
 void Prostor::pridej_osoby(const Osoba & o)
 {
 	osoby.push_back(o);
@@ -46,12 +71,26 @@ void Prostor::vypis_veci(void)const
 {
 	if (veci.empty())
 	{
-		std::cout << "V tomto prostoru se nenachazi zadne veci.\n";
-		return;
+		std::cout << "V tomto prostoru se nenachazi zadne veci na prodej.\n";
 	}
-	for (const auto & i : veci)
-		std::cout << i.first << " - " << i.second << "x, ";
-	std::cout << '\n';
+	else
+	{
+		std::cout << "Veci na prodej: \n";
+		for (const auto & i : veci)
+			std::cout << i.first.jmeno() << " - " << i.second << "x, ";
+		std::cout << '\n';
+	}
+	if (veci_na_zemi.empty())
+	{
+		std::cout << "V tomto prostoru se na zemi nenachazi zadne veci.\n";
+	}
+	else
+	{
+		std::cout << "Veci na zemi: \n";
+		for (const auto & i : veci_na_zemi)
+			std::cout << i.first.jmeno() << " - " << i.second << "x, ";
+		std::cout << '\n';
+	}
 }
 
 void Prostor::vypis_osoby(void)const

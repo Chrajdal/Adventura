@@ -109,9 +109,14 @@ void Hra::inicializuj_hru(void)
 	PrikazKup * kup = new PrikazKup("kup", this, &herni_plan, &batoh);
 	platne_prikazy.pridej_prikaz(kup);
 
-	//std::cout << "----------------------------DEBUG--------------------\n";
-	//std::cout << "TODO: NAINICIALIZOVAT HRU\n";
-	//std::cout << "----------------------------DEBUG--------------------\n";
+	PrikazProhledni * prohledni = new PrikazProhledni("prohledni", this, &herni_plan, &batoh);
+	platne_prikazy.pridej_prikaz(prohledni);
+
+	PrikazMluv * mluv = new PrikazMluv("mluv", this, &herni_plan);
+	platne_prikazy.pridej_prikaz(mluv);
+
+	PrikazPoloz * poloz = new PrikazPoloz("poloz", this, &herni_plan, &batoh);
+	platne_prikazy.pridej_prikaz(poloz);
 }
 
 void Hra::rozluc(void) const
