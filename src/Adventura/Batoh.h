@@ -43,6 +43,11 @@ public:
 		return penize;
 	}
 
+	void pridej_vec(const std::string & vec)
+	{
+		veci[Vec(vec, "", 1, 1, true)]++;
+	}
+
 	bool mam_vec(const std::string & jmeno_veci) const;
 private:
 	std::map<Vec, int> veci;

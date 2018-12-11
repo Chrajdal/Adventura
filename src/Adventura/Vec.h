@@ -20,6 +20,11 @@ public:
 		return nazev;
 	}
 
+	inline int cena_veci(void)const
+	{
+		return cena;
+	}
+
 	friend std::ostream & operator << (std::ostream & os, const Vec & src)
 	{
 		return os << src.nazev;

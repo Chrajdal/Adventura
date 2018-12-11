@@ -44,7 +44,7 @@ public:
 	inline int get_cena(const std::string & nazev)const
 	{
 		auto found = veci.find(Vec(nazev, "", 0, 0, true));
-		return found->second;
+		return found->first.cena_veci();
 	}
 
 	bool prodej_vec(const std::string & nazev)
