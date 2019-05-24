@@ -1,2 +1,2 @@
 # Adventura
-Adventura - prepis
+Adventura - prepis JAVA -> C++
